@@ -15,7 +15,10 @@ endif()
 project(python-blosc2)
 
 set(BLOSC2_MIN_VERSION 3.0.0)
-set(BLOSC2_BUNDLED_VERSION v3.0.3)
+set(BLOSC2_BUNDLED_REPOSITORY "https://github.com/alemirone/c-blosc2.git"
+    CACHE STRING "c-blosc2 repository used when building the bundled runtime library")
+set(BLOSC2_BUNDLED_VERSION "add_j2k_htj2k_codec_ids"
+    CACHE STRING "c-blosc2 tag, branch, or commit used when building the bundled runtime library")
 
 if(WIN32 AND NOT CMAKE_C_COMPILER_ID STREQUAL "Clang")
     message(FATAL_ERROR "Windows builds require clang-cl. Set CC/CXX to clang-cl or configure CMake with -T ClangCL.")
@@ -153,7 +156,7 @@ else()
     set(BLOSC_INSTALL ON)
     include(FetchContent)
     FetchContent_Declare(blosc2
-        GIT_REPOSITORY https://github.com/Blosc/c-blosc2
+        GIT_REPOSITORY ${BLOSC2_BUNDLED_REPOSITORY}
         GIT_TAG ${BLOSC2_BUNDLED_VERSION}
         # SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../c-blosc2
     )

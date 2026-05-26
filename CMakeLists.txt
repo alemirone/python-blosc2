@@ -15,9 +15,9 @@ endif()
 project(python-blosc2)
 
 set(BLOSC2_MIN_VERSION 3.0.0)
-set(BLOSC2_BUNDLED_REPOSITORY "https://github.com/alemirone/c-blosc2.git"
+set(BLOSC2_BUNDLED_REPOSITORY "https://github.com/Blosc/c-blosc2.git"
     CACHE STRING "c-blosc2 repository used when building the bundled runtime library")
-set(BLOSC2_BUNDLED_VERSION "add_j2k_htj2k_codec_ids"
+set(BLOSC2_BUNDLED_VERSION "main"
     CACHE STRING "c-blosc2 tag, branch, or commit used when building the bundled runtime library")
 
 if(WIN32 AND NOT CMAKE_C_COMPILER_ID STREQUAL "Clang")

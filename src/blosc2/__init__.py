@@ -125,9 +125,11 @@ class Codec(Enum):
     GROK = 37
     #: Needs to be installed with ``pip install blosc2-openzl``
     OPENZL = 38
-    #: Needs to be installed with ``pip install blosc2-j2k``
+    #: External plugin codec id. Needs ``pip install blosc2-j2k``.
+    #: HDF5 writers should pass numeric Blosc2 filter options from that package.
     J2K = 39
-    #: Needs to be installed with ``pip install blosc2-htj2k``
+    #: External plugin codec id. Needs ``pip install blosc2-htj2k``.
+    #: HDF5 writers should pass numeric Blosc2 filter options from that package.
     HTJ2K = 40
 
 
